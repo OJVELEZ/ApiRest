@@ -36,19 +36,7 @@ URI
 		tel:1111
 		urn:library:names_authors:mrh
 		library:names:authors:mrh
-		
-		
-URL
-	Universal Resource Locator
-		Subset of URI
-		Identifies a resource and explain how to access that resource providing	an explicit method
-			https
-			http
-			ftp
-			
-			
-All the URL's are URI's
-But not all URI's are URL's
+
 
 URN
 	Universal resource name
@@ -63,11 +51,49 @@ URN
 		
 		URN = linkedin.com/in/ojvelez/
 			Unique name
+			
+			host
+				linkedin.com
+				DNS conversion to an	
+					IP address
+			
+			resource path		
+				/in/ojvelez/
+				
+			default resources
+				if you put a folder automatically will look for:
+					index.html
+					default.htm
+			
+			Optional	
+				URL query
+					?id=11445
+					ate the end of the URN
+				
+			
 		URL = https://www.linkedin.com/in/ojvelez/
 			How: by http
 			Provides the IP using DNS
 			
-		BOTH THE URN AND URL ARE URI
+		BOTH THE URN AND URL ARE URI			
+					
+		
+URL
+	Universal Resource Locator
+		Subset of URI
+		Identifies a resource and explain how to access that resource providing	an explicit method
+			https
+			http
+			ftp
+			
+	PROTOCOL + URN
+		 https://www.linkedin.com/in/ojvelez/
+
+			
+All the URL's are URI's
+But not all URI's are URL's
+
+
 	
 
 SIX CONTRAINTS OF REST
@@ -260,12 +286,15 @@ Methods (aka verbs)
 			404 Not found
 		PUT
 			Update (all the content except the ID) an existing singleton resource based on Identifier
+			If the ID dones not exists, in some cases the resource it's created
 			200 OK
 			401 Unathorized
 			404 Not found			
 			405 Method Not Allowed
 		PATCH
 			Modify (only a part/patch) an existing singleton resource based on Identifier
+			MOdify not replaced the resource
+			Requires an authentication header
 			200 OK
 			401 Unathorized
 			404 Not found			
@@ -282,6 +311,10 @@ Methods (aka verbs)
 			Just the response headers from the resource
 			200 OK
 			404 Not found				
+			
+		TRACE 
+			Create a loopback for the request message
+			200 OK
 		
 	In general POST, PUT, PATCH	in some APIS are the same in aother are very different	
 			
