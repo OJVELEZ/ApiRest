@@ -117,6 +117,11 @@ Headers
 		max-age:no-store
 		max-age:14400
 			For each file
+			
+			
+	curl -I https://api.github.com		
+			
+			
 		
 	Host:
 
@@ -132,4 +137,14 @@ Headers
 		network
 		in chrome ctr-r
 		select
+		
+		
+Payload
+	The content returned by the server additional to the header
+		Html
+		Javascript
+		Json
+		XML
+		etc
+		
 		

@@ -90,93 +90,76 @@ URL
 		 https://www.linkedin.com/in/ojvelez/
 
 			
-All the URL's are URI's
-But not all URI's are URL's
+	All the URL's are URI's
+	But not all URI's are URL's
 
 
-	
 
 SIX CONTRAINTS OF REST
-
-	1-Client-server architecture
+	1-CLIENT-SERVER architecture
 		Client manage the UI
 		Server manage data storage
-		
 		Rest server
 			Client1
 			Client2
 			Client3
-			
 		Serves the data without worry and know about the technologies of the client	
-		
 		In conclusion, we have a complete separation between the content (data) and it's presentation and interaction
 	
-	2-Statelessness
+	2-STATELESSNESS
 		No client context or informacion, aka State, can be stored on the server between request (only if the client asks for it)
 		Stateless
 		The client is responsible for keeping track its own session state 
 		All requests sent from a client must be self-contained and complete
-		
 		Client
 			Server here it's state 1 give me state 2
 		Server:
 			I don't care, here the state you want
-			
-			
 		The server can store information in database or others of the data sended by the client for an specific time
 		For example:
 			The client ask to the server to store an authentication token for a set period of time
 			To allow authentication requests
 			
-	3-Cacheability
+	3-CACHEABILITY
 		All REST responses must be clearly marked as cacheable or not cacheable
-		
 		The server deliver the data and marked it as cacheable or not
 			Server: Keep it for 5 days and after forget it
 			Client: ok
-		
 	
-	4-Layered systems
+	4-LAYERED SYSTEMS
 		The system must be designed so the client cannot know and shouldn't care whete it's connected directly to
 		the server or to an intermediary like a CDN, mirror, ELB, API Gateway, etc
-	
 		Ensures scalability and improves the security overall
 	
-	
-	
-	5-Code on demand
+	5-CODE ON DEMAND
 		Servers are allowed to transfer executable code like javascript and compiled componentes to clients
 		It's an uncommon use
-		
 		Server provides source code to the client and the client executes it
-		
 	
-	6-Uniform interface
-		6.1-Resource identification in request
+	6-UNIFORM INTERFACE
+		6.1-RESOURCE IDENTIFICATION IN REQUEST
 			Must use URI
 			The URI request must specify what resource it is looking for 
 			And what format the reponse should use
-				
 				Client:
 					Give me post #4 in Json Format
 				Server: 
 					Here you go
-			
-			
-		6.2-Resource manipulation through representations
+		
+		6.2-RESOURCE MANIPULATION THROUGH REPRESENTATIONS
 			Once a client has a representation of a resource, it can modify or delete the resource
 		
-		6.3-Self-descriptive messages
+		6.3-SELF-DESCRIPTIVE MESSAGES
 			Sending a receiveing data, each representation must describe its own data format
 	
-		6.4-Hypermedia as the engine of application state
+		6.4-HYPERMEDIA AS THE ENGINE OF APPLICATION STATE
 			Once a client has access to a REST services it should be able to discover all
 			available resources and methods through the hyperlinks provided	
 			With every returned resource, the service should describe the resources and methods available	
 				GET,PUT,PATCH
+	
 		
-		
-Rest don't depends of HTTP, however, most of the services use this protocol, for example the Restful
+Rest doesn't depends of HTTP, however, most of the services use this protocol, for example the Restful
 It's possible to create a rest service using ftp or smtp
 HTTP -> RESTful API
 	Service using Http
@@ -236,10 +219,6 @@ Methods Resource URI
 		You have to establish a header, similar to the return
 		Usually the client or programming language manages a lot of this automatically
 		
-		
-		
-			
-
 Discovery
 	What resources and methods are available
 	OPTIONS URI
@@ -340,9 +319,10 @@ HTTP Status Messages/Codes
 		2XX Success
 			200 OK
 			201 Created
+			202 Accepted
 			204 No content
 
-		3XX Redirection
+		3XX Redirection (move from the original URL)
 			301 	Moved permanently
 			302/303 Found at this other URL
 			307 	Temporary redirect
